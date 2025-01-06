@@ -32,7 +32,7 @@ export default function Home() {
       const response = await axios.request(options);
 
       const requiredData: MovieData[] = response.data.results.map(
-        (item: any) => ({
+        (item: Record<string, any>) => ({
           id: item.id,
           title: item.title,
           overview: item.overview,

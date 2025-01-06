@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import { MovieData } from "@/pages";
+
 type UpcommingProps = {
   setId: (id: number) => void;
   data: MovieData[];
