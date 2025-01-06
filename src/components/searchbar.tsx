@@ -13,7 +13,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search Movies/Show..."
-        className="flex-1 bg-transparent text-white placeholder:text-base placeholder:font-semibold placeholder-white outline-none p-2"
+        className="flex-1 bg-transparent text-white placeholder:text-base placeholder-white outline-none p-2"
       />
     </div>
   );
