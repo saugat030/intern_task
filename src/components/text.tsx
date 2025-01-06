@@ -12,7 +12,7 @@ const Text = ({ data, id }: TextProps) => {
   return (
     <div className="relative mx-auto h-[852px] w-[1504px] p-1">
       <img
-        src={`https://image.tmdb.org/t/p/original/${foundObj?.poster_path}`}
+        src={`https://image.tmdb.org/t/p/original/${foundObj?.backdrop_path}`}
         alt=""
         className="absolute h-full w-full brightness-[0.6] rounded-lg object-cover"
       />
@@ -23,10 +23,10 @@ const Text = ({ data, id }: TextProps) => {
           {foundObj?.overview}
         </p>
         <div className="flex gap-2 font-extrabold text-lg">
-          <h2 className="rounded-full px-3 py-1 bg-yellow-500 text-black">
+          <h2 className="rounded-full px-4 py-1 bg-yellow-400 text-black">
             IMDB: <span className="font-semibold">6.0</span>
           </h2>
-          <h2 className="rounded-full px-3 py-1 bg-white text-black">
+          <h2 className="rounded-full px-4 py-1 bg-white text-black">
             Released On: <span className="font-bold">Sep 27</span>
           </h2>
         </div>
