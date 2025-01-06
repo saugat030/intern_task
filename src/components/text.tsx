@@ -1,4 +1,3 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
 import SearchBar from "./searchbar";
 import { MovieData } from "@/pages";
 
