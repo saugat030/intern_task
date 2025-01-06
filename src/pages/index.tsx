@@ -17,14 +17,14 @@ export default function Home() {
   const [movieData, setMovieData] = useState<MovieData[]>([]);
   const [id, setId] = useState<number | null>(null);
   const fetchMovies = async () => {
-    console.log("API CALLING.....");
+    console.log("APII FUNCTION CHLADAI!!!!!");
+    // console.log(process.env.NEXT_PUBLIC_API_TOKEN);
     const options = {
       method: "GET",
       url: "https://api.themoviedb.org/3/discover/movie",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxY2ViYTE1YzhlOTMwNmExNGMxZWQ3ZDUyYTRlNGFhMCIsIm5iZiI6MTczMjYxMjEwNC4xMTAzNDA0LCJzdWIiOiI2NzQ1OGRkMzgwYjQ0YTg5MzdiN2MzNDUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.f5pYhZOw9kt_ZFyPzWay-D1seZ2dOGJ43W7Mb5-a-A0",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
       },
     };
 
