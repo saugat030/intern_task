@@ -1,8 +1,7 @@
-import React, { Dispatch, SetStateAction } from "react";
 import Marquee from "react-fast-marquee";
 import { MovieData } from "@/pages";
 type UpcommingProps = {
-  setId: Dispatch<SetStateAction<number | null>>;
+  setId: (id: number) => void;
   data: MovieData[];
 };
 const Upcomming = ({ data, setId }: UpcommingProps) => {
@@ -13,6 +12,7 @@ const Upcomming = ({ data, setId }: UpcommingProps) => {
         <Marquee loop={0} pauseOnHover={true} speed={100}>
           {data.map((item) => (
             <img
+              key={item.id}
               src={`https://image.tmdb.org/t/p/w185/${item.poster_path}`}
               alt="Photo"
               className="inline mx-1 rounded-xl"
