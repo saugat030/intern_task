@@ -32,7 +32,6 @@ const SearchBar = ({ setId }: SearchBarProps) => {
           backdrop_path: item.backdrop_path,
         })
       );
-      console.log(response.data.results);
       setMovieData(requiredData);
       console.log(2);
     } catch (error) {
@@ -69,6 +68,7 @@ const SearchBar = ({ setId }: SearchBarProps) => {
               key={item.id}
               onClick={() => {
                 setId(item.id);
+                setMovieData([]);
               }}
               className="flex gap-2 items-center w-full my-1 cursor-pointer p-1 bg-black hover:bg-slate-800"
             >

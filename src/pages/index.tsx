@@ -1,4 +1,4 @@
-import Text from "@/components/text";
+import Landing from "@/components/landing";
 import Upcomming from "@/components/upcomming";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -31,7 +31,7 @@ export type MovieData = {
 
 export default function Home() {
   const [movieData, setMovieData] = useState<MovieData[]>([]);
-  const [id, setId] = useState<number | null>(null);
+  const [id, setId] = useState<number>(0);
   const fetchMovies = async () => {
     console.log("APII FUNCTION CHLADAI!!!!!");
     // console.log(process.env.NEXT_PUBLIC_API_TOKEN);
@@ -58,7 +58,6 @@ export default function Home() {
           backdrop_path: item.backdrop_path,
         })
       );
-      console.log(2);
       setMovieData(requiredData);
       if (requiredData.length > 0) {
         setId(requiredData[Math.floor(Math.random() * requiredData.length)].id);
@@ -70,7 +69,7 @@ export default function Home() {
   useEffect(() => {
     fetchMovies();
   }, []);
-
+  console.log(id);
   if (!movieData.length) {
     return (
       <div className="h-screen flex justify-center items-center text-8xl font-bold">
@@ -82,7 +81,7 @@ export default function Home() {
   return (
     <div className="bg-black font-Poppins pb-0.5 overflow-x-hidden">
       <>
-        <Text setId={setId} data={movieData} id={id} />
+        <Landing setId={setId} id={id} />
         <Upcomming data={movieData} setId={setId} />
       </>
     </div>
