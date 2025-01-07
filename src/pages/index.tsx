@@ -2,7 +2,7 @@ import Text from "@/components/text";
 import Upcomming from "@/components/upcomming";
 import axios from "axios";
 import { useEffect, useState } from "react";
-type Movie = {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -58,7 +58,6 @@ export default function Home() {
           backdrop_path: item.backdrop_path,
         })
       );
-      console.log(response.data.results);
       console.log(2);
       setMovieData(requiredData);
       if (requiredData.length > 0) {
@@ -83,7 +82,7 @@ export default function Home() {
   return (
     <div className="bg-black font-Poppins pb-0.5 overflow-x-hidden">
       <>
-        <Text data={movieData} id={id} />
+        <Text setId={setId} data={movieData} id={id} />
         <Upcomming data={movieData} setId={setId} />
       </>
     </div>
