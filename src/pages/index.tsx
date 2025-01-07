@@ -2,6 +2,22 @@ import Text from "@/components/text";
 import Upcomming from "@/components/upcomming";
 import axios from "axios";
 import { useEffect, useState } from "react";
+type Movie = {
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+};
 
 export type MovieData = {
   id: number;
@@ -32,7 +48,7 @@ export default function Home() {
       const response = await axios.request(options);
 
       const requiredData: MovieData[] = response.data.results.map(
-        (item: Record<string, any>) => ({
+        (item: Movie) => ({
           id: item.id,
           title: item.title,
           overview: item.overview,
@@ -65,7 +81,7 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-black font-Poppins py-0.5">
+    <div className="bg-black font-Poppins pb-0.5 overflow-x-hidden">
       <>
         <Text data={movieData} id={id} />
         <Upcomming data={movieData} setId={setId} />

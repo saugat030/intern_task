@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 const SearchBar = () => {
   return (
     <div
-      className="flex items-center mt-4 bg-gray-600/10 backdrop-blur-sm py-1 px-4 rounded-full w-[350px] h-[53px] mx-auto border-2 border-white
+      className="absolute flex left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 items-center mt-4 bg-gray-600/10 backdrop-blur-sm py-1 px-4 rounded-full w-[350px] h-[53px] mx-auto border-2 border-white
        "
     >
       <button className=" text-white rounded-full">
